@@ -23,6 +23,7 @@ import ImportContactsIcon from '@mui/icons-material/ImportContacts';
 import GTranslateIcon from '@mui/icons-material/GTranslate';
 import StoreIcon from '@mui/icons-material/Store';
 import RefreshIcon from '@mui/icons-material/Refresh';
+import { Link } from 'react-router-dom';
 
 const SideBarMenuList = [
     {
@@ -43,12 +44,12 @@ const SideBarMenuList = [
     {
         title: "React Redux",
         icon: <StoreIcon />,
-        route: "redux"
+        route: "/react-redux"
     },
     {
         title: "Form",
         icon: <ImportContactsIcon />,
-        route: "form"
+        route: "/form"
     },
     {
         title: "Other",
@@ -123,7 +124,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
     }),
 );
 
-export default function MiniDrawer() {
+export default function SideBar() {
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
 
@@ -167,6 +168,7 @@ export default function MiniDrawer() {
                 <List>
                     {SideBarMenuList.map(({ title, icon, route }, index) => (
                         <ListItem key={title} disablePadding sx={{ display: 'block' }}>
+                            <Link to={route} >
                             <ListItemButton
                                 sx={{
                                     minHeight: 48,
@@ -174,37 +176,26 @@ export default function MiniDrawer() {
                                     px: 2.5,
                                 }}
                             >
-                                <ListItemIcon
-                                    sx={{
-                                        minWidth: 0,
-                                        mr: open ? 3 : 'auto',
-                                        justifyContent: 'center',
-                                    }}
-                                >
-                                    {icon}
-                                </ListItemIcon>
-                                <ListItemText primary={title} sx={{ opacity: open ? 1 : 0 }} />
+                                    <ListItemIcon
+                                        sx={{
+                                            minWidth: 0,
+                                            mr: open ? 3 : 'auto',
+                                            justifyContent: 'center',
+                                        }}
+                                    >
+                                        {icon}
+                                    </ListItemIcon>
+                                    <ListItemText primary={title} sx={{ opacity: open ? 1 : 0 }} />
                             </ListItemButton>
+                                </Link>
                         </ListItem>
                     ))}
                 </List>
                 <Divider />
             </Drawer>
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-                <DrawerHeader />
                 <Typography paragraph>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
-                    enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus
-                    imperdiet. Semper risus in hendrerit gravida rutrum quisque non tellus.
-                    Convallis convallis tellus id interdum velit laoreet id donec ultrices.
-                    Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-                    adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra
-                    nibh cras. Metus vulputate eu scelerisque felis imperdiet proin fermentum
-                    leo. Mauris commodo quis imperdiet massa tincidunt. Cras tincidunt lobortis
-                    feugiat vivamus at augue. At augue eget arcu dictum varius duis at
-                    consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa
-                    sapien faucibus et molestie ac.
+                    Sidebar
                 </Typography>
             </Box>
         </Box>

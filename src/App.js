@@ -1,11 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
-import Dashboard from './Component/Dashboard.js';
+import AllRoutes from './routes';
+import SideBar from './Component/Common/Sidebar';
 
 function App() {
   return (
     <div className="App">
-      <Dashboard />
+      <SideBar />
+      <AllRoutes />
     </div>
   );
 }
