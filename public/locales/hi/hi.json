@@ -1,0 +1,4 @@
+{
+    "This is static content" : "यह स्थिर सामग्री है",
+    "Selected : {{ selectedLanguage }}" : "गिने चुने : {{ selectedLanguage }}"
+}

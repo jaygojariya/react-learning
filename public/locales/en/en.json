@@ -1,0 +1,4 @@
+{
+    "This is static content" : "This is static content",
+    "Selected : {{ selectedLanguage }}" : "Selected : {{ selectedLanguage }}"
+}
